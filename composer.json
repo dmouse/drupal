@@ -25,9 +25,9 @@
     "guzzle/http": "3.7.*",
     "kriswallsmith/assetic": "1.1.*@alpha",
     "symfony-cmf/routing": "1.1.*@alpha",
-    "easyrdf/easyrdf": "0.8.0-beta.2",
     "phpunit/phpunit": "3.7.*",
-    "zendframework/zend-feed": "2.2.*"
+    "zendframework/zend-feed": "2.2.*",
+    "easyrdf/easyrdf": "0.8.0-beta.1"
   },
   "autoload": {
     "psr-0": {
