@@ -26,8 +26,7 @@
     "kriswallsmith/assetic": "1.1.*@alpha",
     "symfony-cmf/routing": "1.1.*@alpha",
     "phpunit/phpunit": "3.7.*",
-    "zendframework/zend-feed": "2.2.*",
-    "hechoendrupal/drupal":"8.x-dev"
+    "zendframework/zend-feed": "2.2.*"
   },
   "autoload": {
     "psr-0": {
