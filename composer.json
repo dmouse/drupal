@@ -27,7 +27,7 @@
     "symfony-cmf/routing": "1.1.*@alpha",
     "phpunit/phpunit": "3.7.*",
     "zendframework/zend-feed": "2.2.*",
-    "easyrdf/easyrdf": "0.8.0-beta.1"
+    "hechoendrupal/drupal":"8.x-dev"
   },
   "autoload": {
     "psr-0": {
