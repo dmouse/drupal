@@ -456,10 +456,8 @@ function install_begin_request(&$install_state) {
     $settings['keyvalue_default'] = 'keyvalue.memory';
     new Settings($settings);
 
-    $container->register('state', 'Drupal\Core\KeyValueStore\KeyValueStoreInterface')
-      ->setFactoryService(new Reference('keyvalue'))
-      ->setFactoryMethod('get')
-      ->addArgument('state');
+    $container->register('state', 'Drupal\Core\KeyValueStore\State')
+      ->addArgument(new Reference('keyvalue'));
 
     // Register Twig template engine for use during install.
     CoreServiceProvider::registerTwig($container);
@@ -487,7 +485,14 @@ function install_begin_request(&$install_state) {
 
     // Register the info parser.
     $container->register('info_parser', 'Drupal\Core\Extension\InfoParser');
+
+    $container->register('theme_handler', 'Drupal\Core\Extension\ThemeHandler')
+      ->addArgument(new Reference('config.factory'))
+      ->addArgument(new Reference('module_handler'))
+      ->addArgument(new Reference('cache.cache'))
+      ->addArgument(new Reference('info_parser'));
   }
+
   // Set the request in the kernel to the new created Request above
   // so it is available to the rest of the installation process.
   $container->set('request', $request);
